@@ -1090,3 +1090,7 @@ if ( ! function_exists( 'owp_fs' ) ) {
 // endregion
 
 new OCEANWP_Theme_Class();
+
+add_filter( 'woocommerce_sale_flash', function( $texto ) {
+	return str_replace( __( 'Sale!', 'woocommerce' ), '¡OFERTA!', $texto );
+}, 10, 1 );
